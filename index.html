@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="icon.png" />
+  <title>미친놈 승률 예측기</title>
+</head>
+<body>
+  <h1>미친놈 승률 예측기</h1>
+
+  <section class="input-section">
+    <h2>결과 입력</h2>
+    <div class="button-group">
+      <button class="circle banker" data-result="B">뱅커</button>
+      <button class="circle player" data-result="P">플레이어</button>
+      <button class="circle tie" data-result="T">타이</button>
+    </div>
+  </section>
+
+  <section class="history-section">
+    <h2>최근 결과</h2>
+    <ul id="historyList"></ul>
+  </section>
+
+  <section class="prediction-section">
+    <h2>최고 예측</h2>
+    <p id="bestPrediction">예측 없음</p>
+    <h3>에이전트 상태</h3>
+    <ul id="agentStats"></ul>
+  </section>
+
+  <section class="martingale-section">
+    <h2>마틴게일 계산기</h2>
+    <label for="baseBet">시작 베팅 금액:</label>
+    <input type="number" id="baseBet" value="10" min="1" />
+    <label for="currentStep">현재 단계:</label>
+    <input type="number" id="currentStep" value="0" min="0" />
+    <button id="calcBtn">계산</button>
+    <p>다음 베팅 금액: <span id="nextBet">0 원</span></p>
+    <p>총 손실 금액: <span id="totalLoss">0 원</span></p>
+  </section>
+
+  <script src="app.js"></script>
+</body>
+</html>
